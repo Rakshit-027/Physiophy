@@ -1,11 +1,19 @@
-.about-page {
-    padding-top: 80px;
+app {
+    min-height: 100vh;
+  }
+  
+  main {
+    padding-top: 80px; /* Height of the navbar */
+  }
+  
+  .about-page {
+    width: 100%;
   }
   
   .about-hero {
     background: linear-gradient(rgba(152, 216, 170, 0.9), rgba(44, 85, 48, 0.8)),
                 url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070') center/cover;
-    height: 400px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,16 +21,43 @@
     color: var(--white);
   }
   
+  .about-hero-content {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+  
   .about-hero-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
   
   .about-hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+  }
+  
+  .achievement-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .achievement-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 200px;
+  }
+  
+  .achievement-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.5rem;
   }
   
   .mission-vision {
@@ -90,18 +125,65 @@
   .history-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
   }
   
   .history-content h2 {
     color: var(--dark-green);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     font-size: 2rem;
+    text-align: center;
   }
   
-  .history-content p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--dark-green);
+  }
+  
+  .timeline-item {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  .timeline-item:nth-child(odd) .content {
+    margin-left: 2rem;
+    text-align: left;
+  }
+  
+  .timeline-item:nth-child(even) .content {
+    margin-right: 2rem;
+    text-align: right;
+    order: -1;
+  }
+  
+  .year {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .content {
+    flex: 0 1 400px;
+  }
+  
+  .content h3 {
+    color: var(--dark-green);
+    margin-bottom: 0.5rem;
   }
   
   .team {
@@ -169,7 +251,8 @@
     margin-bottom: 0.5rem;
   }
   
-  .member-info .specialization {
+  .member-info .specialization,
+  .member-info .education {
     color: #666;
     margin-bottom: 0.5rem;
   }
@@ -177,6 +260,23 @@
   .member-info .experience {
     color: #666;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .certifications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
+  .certification-badge {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
   }
   
   @media (max-width: 1024px) {
@@ -184,25 +284,13 @@
     .team-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
   
-  @media (max-width: 768px) {
-    .about-hero {
-      height: 300px;
+    .achievement-cards {
+      flex-wrap: wrap;
     }
   
-    .about-hero-content h1 {
-      font-size: 2.5rem;
-    }
-  
-    .mission-container,
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .mission-card,
-    .team-member {
-      max-width: 400px;
-      margin: 0 auto;
+    .achievement-card {
+      min-width: 150px;
     }
   }
+  

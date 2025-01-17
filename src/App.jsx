@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Home from './components/Home.jsx';
 import About from './components/About';
+import Services from './components/Services.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         >
           <Home />
           <About />
+          <Services/>
         </motion.div>
       </AnimatePresence>
     </div>
