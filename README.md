@@ -111,6 +111,27 @@ npm run build
 - Company history
 - Interactive cards with animations
 
+### Services Page
+- Heading added
+- Services Details Added
+
+### Appotment Booking Page
+- Interactive date selection:
+
+- Shows next 14 available days (excluding weekends)
+- Clear visual feedback for selected dates
+  - Time slot selection:
+- Multiple time slots throughout the day
+- Morning and afternoon availability
+- Visual feedback for selected time
+  
+  - Patient details form:
+- Full name
+- Email address
+- Phone number
+- Problem description
+- Success message
+
 ### Contact Page
 - Contact Form
 - Catchy heading
