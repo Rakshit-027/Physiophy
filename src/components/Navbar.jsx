@@ -83,10 +83,10 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link
-              to="appointment"
+              to="appointment-container"
               spy={true}
               smooth={true}
-              offset={-80}
+              offset={-59}
               duration={500}
               onClick={() => setIsOpen(false)}
             >
@@ -107,10 +107,10 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link
-              to="contact"
+              to="contact-container"
               spy={true}
               smooth={true}
-              offset={-80}
+              offset={-40}
               duration={500}
               onClick={() => setIsOpen(false)}
             >

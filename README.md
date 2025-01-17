@@ -61,6 +61,10 @@ Physiophy/
     ├── components/
     │   ├── About.css
     │   ├── About.jsx
+    │   ├── Appointment.css
+    │   ├── Appointment.jsx
+    │   ├── Contact.css
+    │   ├── Contact.jsx
     │   ├── Home.jsx
     │   ├── Logo.png
     │   ├── Navbar.jsx
@@ -68,7 +72,6 @@ Physiophy/
     │   └── Services.jsx
     ├── index.css
     └── main.jsx
-
 ## Development
 
 To start the development server:
@@ -107,6 +110,11 @@ npm run build
 - Mission and vision statements
 - Company history
 - Interactive cards with animations
+
+### Contact Page
+- Contact Form
+- Catchy heading
+- Attractive design
 
 ## Styling
 

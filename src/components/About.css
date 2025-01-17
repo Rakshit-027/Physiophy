@@ -11,7 +11,7 @@ app {
   }
   
   .about-hero {
-    background: linear-gradient(rgba(152, 216, 170, 0.9), rgba(44, 85, 48, 0.8)),
+    background: linear-gradient(rgba(152, 216, 170, 0.9), #1abc9c),
                 url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2070') center/cover;
     height: 500px;
     display: flex;
@@ -74,7 +74,7 @@ app {
   }
   
   .mission-card {
-    background-color: var(--light-green);
+    background-color: #1abc9c;
     padding: 2rem;
     border-radius: 8px;
     text-align: center;

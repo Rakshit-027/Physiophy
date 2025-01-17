@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home.jsx';
 import About from './components/About';
 import Services from './components/Services.jsx';
+import Contact from './components/Contact.jsx';
+import Appointment from './components/Appointment.jsx';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Home />
           <About />
           <Services/>
+          <Appointment/>
+          <Contact/>
         </motion.div>
       </AnimatePresence>
     </div>

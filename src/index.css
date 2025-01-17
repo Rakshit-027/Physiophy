@@ -1,7 +1,10 @@
 /* Reset and base styles */
+body{
+  background-color:#E3F2E7 ;
+}
 :root {
-  --primary-green: #98D8AA;
-  --dark-green: #2C5530;
+  --primary-green: #1abc9c;;
+  --dark-green: black bold;;
   --light-green: #E3F2E7;
   --white: #ffffff;
   --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -33,7 +36,7 @@ body {
 
 .navbar.scrolled {
   padding: 0.6rem 2rem;
-  background-color: var(--primary-green);
+  background-color: inherit;
 }
 
 .nav-container {
@@ -74,10 +77,12 @@ body {
   list-style: none;
   gap: 2rem;
   cursor: pointer;
+  
 }
 
 .nav-item {
   position: relative;
+  
 }
 .logo-image {
   height: 30px; /* Adjust based on your logo size */
@@ -128,7 +133,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--dark-green);
+  background-color: black;
   transition: width var(--transition-speed) ease;
 }
 
@@ -161,7 +166,7 @@ body {
 }
 
 .hero {
-  background-color: var(--light-green);
+  background-color: #1abc9c;
   padding: 4rem 2rem;
   text-align: center;
 }
@@ -208,7 +213,7 @@ body {
 
 .feature-card {
   padding: 2rem;
-  background-color: var(--light-green);
+  background-color: #1abc9c;
   border-radius: 8px;
   text-align: center;
 }
