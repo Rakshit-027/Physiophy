@@ -63,15 +63,20 @@ Physiophy/
     │   ├── About.jsx
     │   ├── Appointment.css
     │   ├── Appointment.jsx
+    │   ├── Auth.css
     │   ├── Contact.css
     │   ├── Contact.jsx
     │   ├── Home.jsx
     │   ├── Logo.png
+    │   ├── Navbar.css
     │   ├── Navbar.jsx
     │   ├── Services.css
-    │   └── Services.jsx
+    │   ├── Services.jsx
+    │   ├── SignIn.jsx
+    │   └── SignUp.jsx
     ├── index.css
     └── main.jsx
+    
 ## Development
 
 To start the development server:
@@ -136,6 +141,23 @@ npm run build
 - Contact Form
 - Catchy heading
 - Attractive design
+
+### Sign In Page 
+- Email and password fields
+- Remember me option
+- Forgot password link
+- Link to sign up page
+- Form validation
+- Loading states
+
+### Sign Up Page 
+- Full name, email, phone fields
+- Password and confirm password
+- Terms & conditions checkbox
+- Link to sign in page
+- Comprehensive form validation
+
+
 
 ## Styling
 
