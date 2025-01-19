@@ -112,7 +112,7 @@ const Navbar = ({ isLoggedIn, onLogin, onLogout }) => {
           </li>
           <li className="nav-item">
             <Link
-              to="faqs"
+              to="faq-container"
               spy={true}
               smooth={true}
               offset={-80}

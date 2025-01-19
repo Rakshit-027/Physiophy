@@ -8,6 +8,7 @@ import Contact from './components/Contact.jsx';
 import Appointment from './components/Appointment.jsx';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import FAQ from './components/FAQ.jsx';
 
 function App() {
   const [showAuth, setShowAuth] = useState(null);
@@ -65,6 +66,7 @@ function App() {
             <Services/>
             <Appointment/>
             <Contact/>
+            <FAQ/>
           </motion.div>
         )}
       </AnimatePresence>

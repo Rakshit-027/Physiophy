@@ -66,6 +66,8 @@ Physiophy/
     │   ├── Auth.css
     │   ├── Contact.css
     │   ├── Contact.jsx
+    │   ├── FAQ.css
+    │   ├── FAQ.jsx
     │   ├── Home.jsx
     │   ├── Logo.png
     │   ├── Navbar.css
@@ -76,7 +78,7 @@ Physiophy/
     │   └── SignUp.jsx
     ├── index.css
     └── main.jsx
-    
+
 ## Development
 
 To start the development server:
@@ -125,12 +127,13 @@ npm run build
 
 - Shows next 14 available days (excluding weekends)
 - Clear visual feedback for selected dates
-  - Time slot selection:
+  
+## Time slot selection:
 - Multiple time slots throughout the day
 - Morning and afternoon availability
 - Visual feedback for selected time
   
-  - Patient details form:
+## Patient details form:
 - Full name
 - Email address
 - Phone number
@@ -157,6 +160,13 @@ npm run build
 - Link to sign in page
 - Comprehensive form validation
 
+### FAQ Page 
+- A prominent header with title and description
+- Six common physiotherapy-related FAQs
+- Expandable/collapsible answers
+- A footer with contact information
+- Smooth animations and transitions
+- A professional, medical-appropriate color scheme
 
 
 ## Styling
