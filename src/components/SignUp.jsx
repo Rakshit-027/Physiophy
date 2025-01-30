@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { User, Mail, Lock, Phone, UserPlus, ArrowRight, X } from 'lucide-react';
 import './Auth.css';
 import Logo from './Logo.png';
+import supabase from './SupabaseClient';
 
 const SignUp = ({ onClose, onSignIn, onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -10,36 +11,76 @@ const SignUp = ({ onClose, onSignIn, onSuccess }) => {
     phone: '',
     password: '',
     confirmPassword: '',
-    agreeToTerms: false
+    agreeToTerms: false,
   });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Sign up data:', formData);
-    onSuccess();
+
+    // Debugging: Check if supabase is properly initialized
+    if (!supabase) {
+      console.error('Supabase client is not initialized.');
+      alert('An error occurred: Supabase client is not initialized.');
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    if (!formData.agreeToTerms) {
+      alert('Please agree to the Terms & Conditions');
+      return;
+    }
+
+    try {
+      const { user, error } = await supabase.auth.signUp(
+        {
+          email: formData.email,
+          password: formData.password,
+        },
+        {
+          // Optional: Add metadata to the user
+          data: {
+            full_name: formData.fullName,
+            phone: formData.phone,
+          },
+        }
+      );
+
+      if (error) {
+        console.error('Error signing up:', error.message);
+        alert('Error signing up: ' + error.message);
+      } else {
+        console.log('User signed up successfully:', user);
+        onSuccess();
+      }
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      alert('Unexpected error: ' + error.message);
+    }
   };
 
   return (
     <div className="auth-container" onClick={onClose}>
-      <div className="auth-card" onClick={e => e.stopPropagation()}>
+      <div className="auth-card" onClick={(e) => e.stopPropagation()}>
         <button className="close-button" onClick={onClose}>
           <X size={24} />
         </button>
-
         <div className="auth-header">
           <img src={Logo} alt="Logo" className="auth-logo" />
           <h1>Create Account</h1>
           <p>Join us to start your healing journey</p>
         </div>
-
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
             <label>
@@ -54,7 +95,6 @@ const SignUp = ({ onClose, onSignIn, onSuccess }) => {
               />
             </label>
           </div>
-
           <div className="form-group">
             <label>
               <Mail size={20} className="input-icon" />
@@ -68,7 +108,6 @@ const SignUp = ({ onClose, onSignIn, onSuccess }) => {
               />
             </label>
           </div>
-
           <div className="form-group">
             <label>
               <Phone size={20} className="input-icon" />
@@ -82,7 +121,6 @@ const SignUp = ({ onClose, onSignIn, onSuccess }) => {
               />
             </label>
           </div>
-
           <div className="form-group">
             <label>
               <Lock size={20} className="input-icon" />
@@ -96,7 +134,6 @@ const SignUp = ({ onClose, onSignIn, onSuccess }) => {
               />
             </label>
           </div>
-
           <div className="form-group">
             <label>
               <Lock size={20} className="input-icon" />
@@ -110,7 +147,6 @@ const SignUp = ({ onClose, onSignIn, onSuccess }) => {
               />
             </label>
           </div>
-
           <div className="form-options">
             <label className="remember-me">
               <input
@@ -123,13 +159,11 @@ const SignUp = ({ onClose, onSignIn, onSuccess }) => {
               <span>I agree to the Terms & Conditions</span>
             </label>
           </div>
-
           <button type="submit" className="auth-button">
             <UserPlus size={20} />
             <span>Create Account</span>
           </button>
         </form>
-
         <div className="auth-footer">
           <p>Already have an account?</p>
           <button onClick={onSignIn} className="switch-auth">

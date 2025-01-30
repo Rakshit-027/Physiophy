@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home.jsx';
 import About from './components/About';
@@ -24,53 +25,66 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Navbar 
-        isLoggedIn={isLoggedIn} 
-        onLogin={() => setShowAuth('signin')} 
-        onLogout={handleLogout}
-      />
-      <AnimatePresence mode="wait">
-        {showAuth ? (
-          <motion.div
-            key="auth"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50"
-          >
-            {showAuth === 'signin' ? (
-              <SignIn 
-                onClose={() => setShowAuth(null)}
-                onSignUp={() => setShowAuth('signup')}
-                onSuccess={handleLogin}
-              />
-            ) : (
-              <SignUp 
-                onClose={() => setShowAuth(null)}
-                onSignIn={() => setShowAuth('signin')}
-                onSuccess={handleLogin}
-              />
-            )}
-          </motion.div>
-        ) : (
-          <motion.div
-            key="content"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Home />
-            <About />
-            <Services/>
-            <Appointment/>
-            <Contact/>
-            <FAQ/>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar
+          isLoggedIn={isLoggedIn}
+          onLogin={() => setShowAuth('signin')}
+          onLogout={handleLogout}
+        />
+
+        <AnimatePresence mode="wait">
+          {showAuth ? (
+            <motion.div
+              key="auth"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50"
+            >
+              {showAuth === 'signin' ? (
+                <SignIn
+                  onClose={() => setShowAuth(null)}
+                  onSignUp={() => setShowAuth('signup')}
+                  onSuccess={handleLogin}
+                />
+              ) : (
+                <SignUp
+                  onClose={() => setShowAuth(null)}
+                  onSignIn={() => setShowAuth('signin')}
+                  onSuccess={handleLogin}
+                />
+              )}
+            </motion.div>
+          ) : (
+            <Content isLoggedIn={isLoggedIn} />
+          )}
+        </AnimatePresence>
+      </div>
+    </Router>
+  );
+}
+
+function Content({ isLoggedIn }) {
+  const location = useLocation();
+
+  return (
+    <motion.div
+      key={location.pathname}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Routes location={location}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/appointment" element={isLoggedIn ? <Appointment /> : <Home />} />
+        <Route path="/faq" element={<FAQ />} />
+      </Routes>
+    </motion.div>
   );
 }
 
