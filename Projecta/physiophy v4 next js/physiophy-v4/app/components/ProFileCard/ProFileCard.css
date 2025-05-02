@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Open+sans);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display);
+
+.snip1515 {
+  font-family: "Open Sans", Arial, sans-serif;
+  position: relative;
+  margin: 10px;
+  min-width: 300px;
+  max-width: 450px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  line-height: 1.4em;
+  font-size: 14px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  margin-top: 21px;
+}
+
+.snip1515:hover {
+  transform: translateZ(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.snip1515 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.snip1515 .profile-image {
+  display: inline-block;
+  width: 90%;
+  position: relative;
+  padding: 10px;
+  border: 2px solid #e8b563;
+  background: #fff;
+  border-radius: 8px;
+  transform: translateZ(30px);
+  transition: transform 0.3s ease;
+}
+
+.snip1515:hover .profile-image {
+  transform: translateZ(50px);
+}
+
+.snip1515 .profile-image img {
+  max-width: 100%;
+  vertical-align: top;
+  border-radius: 6px;
+}
+
+.snip1515 figcaption {
+  width: 100%;
+  background-color: #f2f2f2;
+  color: #555;
+  padding: 150px 25px 25px;
+  margin-top: -120px;
+  display: inline-block;
+  border-radius: 0 0 10px 10px;
+}
+
+.snip1515 h3,
+.snip1515 h4,
+.snip1515 p {
+  margin: 0 0 5px;
+  position: relative; /* Ensure positioning context for 3D */
+  transform: translateZ(0); /* Initial state */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.snip1515:hover h3 {
+  transform: translateZ(40px); /* Name floats out most */
+}
+
+.snip1515:hover h4 {
+  transform: translateZ(30px); /* Subtitles float slightly less */
+}
+
+.snip1515:hover p {
+  transform: translateZ(20px); /* Description floats least */
+}
+
+.snip1515 h3 {
+  font-weight: 600;
+  font-size: 1.5em;
+  font-family: "Playfair Display", Arial, sans-serif;
+}
+
+.snip1515 h4 {
+  color: #8c8c8c;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.snip1515 p {
+  font-size: 1em;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.snip1515 .icons {
+  text-align: center;
+  width: 100%;
+  transform: translateZ(20px);
+}
+
+.snip1515 i {
+  padding: 10px 5px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: normal;
+  color: #e8b563;
+  opacity: 0.75;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.snip1515:hover i {
+  opacity: 1;
+  transform: translateZ(30px);
+}

@@ -1,0 +1,313 @@
+/* Base Section Styling */
+.xai-contact-section {
+  min-height: auto; /* Keeps flexibility */
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw; /* Adjusts padding dynamically */
+  overflow: hidden;
+  position: relative;
+  flex-direction: column; /* Ensures content stacks properly on smaller screens */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .xai-contact-section {
+    padding: 4vw; /* Reduce padding on smaller screens */
+    flex-direction: column;
+    text-align: center; /* Center-align content */
+  }
+}
+
+@media (max-width: 480px) {
+  .xai-contact-section {
+    padding: 0vw; 
+
+  }
+  .xai-contact-email{
+    align-items: center;
+    justify-content: center;
+    /* display: inline; */
+    text-align: center;
+    margin: 0 auto;
+  }
+  .xai-contact-phone{
+    align-items: center;
+    justify-content: center;
+
+  }
+  .social-linkssss{
+     align-items: center; 
+    justify-content: center;
+
+  }
+  
+}
+
+.xai-contact-headerr {
+  font-size: 2.9rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: -5rem; /* Adjusted margin */
+  padding: 1rem; /* Reduced padding */
+  /* text-transform: uppercase; */
+  letter-spacing: 1.5px;
+}
+
+/* Contact Card */
+.xai-contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px; /* Slightly smaller radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Smaller shadow */
+  overflow: hidden;
+  display: flex;
+  max-width: 900px; /* Reduced max-width */
+  width: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.xai-contact-card:hover {
+  transform: translateY(-5px); /* Reduced hover lift */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Section */
+.xai-contact-content {
+  padding: 40px; /* Reduced padding */
+  width: 50%;
+  background: #faf9ff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Reduced gap */
+  position: relative;
+}
+
+.xai-contact-header {
+  font-size: 2rem; /* Reduced size */
+  color: #4a3f92;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.xai-contact-text {
+  color: #5a4e9c;
+  font-size: 1rem; /* Reduced size */
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Contact Info */
+.xai-contact-info p {
+  margin: 15px 0; /* Reduced margin */
+  color: #4a3f92;
+  font-size: 1rem; /* Reduced size */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Reduced gap */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.xai-contact-info p:hover {
+  color: #6c5bbf;
+  transform: translateX(5px);
+}
+
+.xai-icon {
+  font-size: 1.2rem; /* Reduced size */
+  color: #6c5bbf;
+  transition: transform 0.3s ease;
+}
+
+.xai-contact-info p:hover .xai-icon {
+  transform: scale(1.2);
+}
+
+/* Social Links */
+.xai-social-links {
+  margin-top: 20px; /* Reduced margin */
+}
+
+.xai-social-text {
+  color: #4a3f92;
+  font-weight: 600;
+  font-size: 1rem; /* Reduced size */
+}
+
+.social-linkssss {
+  display: flex;
+  gap: 15px; /* Reduced gap */
+  flex-wrap: wrap;
+}
+
+.xai-social-icon {
+  display: inline-flex;
+  width: 40px; /* Reduced size */
+  height: 40px;
+  background: linear-gradient(45deg, #6c5bbf, #988aff);
+  border-radius: 50%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem; /* Reduced size */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.xai-social-icon:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 6px 15px rgba(108, 91, 191, 0.5);
+}
+
+/* Right Section */
+.xai-contact-form-wrapper {
+  padding: 40px; /* Reduced padding */
+  width: 50%;
+  background: linear-gradient(135deg, #eee9ff 0%, #d1c8ff 100%);
+  position: relative;
+}
+
+.xai-form-header {
+  font-size: 1.8rem; /* Reduced size */
+  color: #4a3f92;
+  font-weight: 700;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+/* Form Styling */
+.xai-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap */
+}
+
+.xai-form-input,
+.xai-form-textarea {
+  padding: 12px; /* Reduced padding */
+  border: 2px solid #d1c8ff;
+  border-radius: 10px; /* Smaller radius */
+  font-size: 0.9rem; /* Reduced size */
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.xai-form-input:focus,
+.xai-form-textarea:focus {
+  border-color: #6c5bbf;
+  box-shadow: 0 0 10px rgba(108, 91, 191, 0.3);
+  transform: scale(1.02);
+}
+
+.xai-form-textarea {
+  min-height: 248px; /* Reduced height */
+  resize: vertical;
+}
+
+/* Button Styling */
+.xai-form-button {
+  padding: 12px 20px; /* Reduced padding */
+  background: linear-gradient(45deg, #6c5bbf, #988aff);
+  color: white;
+  border: none;
+  border-radius: 10px; /* Smaller radius */
+  font-size: 1rem; /* Reduced size */
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.xai-form-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(108, 91, 191, 0.5);
+}
+
+/* Background Decorative Elements */
+.xai-contact-section::before {
+  content: '';
+  position: absolute;
+  top: -30px; /* Adjusted size */
+  left: -30px;
+  width: 150px; /* Reduced size */
+  height: 150px;
+  background: radial-gradient(circle, rgba(108, 91, 191, 0.2), transparent);
+  z-index: 0;
+}
+
+.xai-contact-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; /* Adjusted size */
+  right: -30px;
+  width: 150px; /* Reduced size */
+  height: 150px;
+  background: radial-gradient(circle, rgba(152, 138, 255, 0.2), transparent);
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .xai-contact-card {
+    flex-direction: column;
+    max-width: 80%; /* Reduced width */
+  }
+
+  .xai-contact-content,
+  .xai-contact-form-wrapper {
+    width: 100%;
+    padding: 30px; /* Reduced padding */
+  }
+
+  .xai-contact-header {
+    font-size: 1.8rem; /* Reduced size */
+  }
+
+  .xai-form-header {
+    font-size: 1.5rem; /* Reduced size */
+  }
+}
+
+@media (max-width: 480px) {
+  .xai-contact-headerr {
+    font-size: 1rem; /* Reduced size */
+    margin-bottom: -1.5rem; /* Adjusted margin */
+  }
+
+  .xai-contact-content,
+  .xai-contact-form-wrapper {
+    padding: 20px; /* Reduced padding */
+  }
+
+  .xai-contact-header {
+    font-size: 1.5rem; /* Reduced size */
+  }
+
+  .xai-form-header {
+    font-size: 1.2rem; /* Reduced size */
+  }
+
+  .xai-form-input,
+  .xai-form-textarea {
+    padding: 10px; /* Reduced padding */
+  }
+
+  .xai-form-button {
+    padding: 10px 18px; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced size */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .xai-social-icon {
+    width: 30px; /* Reduced size */
+    height: 30px;
+    font-size: 1rem; /* Reduced size */
+  }
+}
+.Buttonnn{
+  align-items: center;
+  justify-content: center;
+}
